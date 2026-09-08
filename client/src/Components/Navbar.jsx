@@ -6,7 +6,7 @@ import "../styles/Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
-  const location = useLocation();
+  useLocation(); // makes navbar rerender when route changes
 
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -15,26 +15,23 @@ function Navbar() {
     0
   );
 
-  // Check whether user is logged in
   const token = localStorage.getItem("token");
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+
     navigate("/login");
   };
 
   return (
     <nav className="navbar">
-
       <div className="logo">
         <h2>🛒 ShopSphere</h2>
       </div>
 
       <div className="nav-links">
-
         <Link to="/">Home</Link>
-
         <Link to="/products">Products</Link>
 
         <Link to="/cart">
@@ -48,15 +45,13 @@ function Navbar() {
           </>
         ) : (
           <Button
-            variant="outlined"
+            variant="contained"
             onClick={handleLogout}
           >
             Logout
           </Button>
         )}
-
       </div>
-
     </nav>
   );
 }
