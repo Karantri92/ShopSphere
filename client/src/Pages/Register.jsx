@@ -23,7 +23,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`,
         {
           method: "POST",
           headers: {
