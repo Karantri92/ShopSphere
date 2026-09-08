@@ -1,0 +1,68 @@
+const products = [
+  {
+    id: 1,
+    name: "iPhone 16",
+    price: 79999,
+    image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGlwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
+    rating: 4.5,
+    category: "Electronics",
+  },
+  {
+    id: 2,
+    name: "MacBook Air M3",
+    price: 99999,
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+    rating: 4.8,
+    category: "Laptops",
+  },
+  {
+    id: 3,
+    name: "Nike Air Max",
+    price: 8999,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    rating: 4.6,
+    category: "Shoes",
+  },
+  {
+    id: 4,
+    name: "Classic Denim Jacket",
+    price: 2499,
+    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5",
+    rating: 4.3,
+    category: "Fashion",
+  },
+  {
+    id: 5,
+    name: "Apple Watch Series 10",
+    price: 45999,
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
+    rating: 4.7,
+    category: "Watches",
+  },
+  {
+    id: 6,
+    name: "Sony WH-1000XM5",
+    price: 29999,
+    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+    rating: 4.8,
+    category: "Audio",
+  },
+  {
+    id: 7,
+    name: "Modern Lounge Chair",
+    price: 12999,
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
+    rating: 4.4,
+    category: "Furniture",
+  },
+  {
+    id: 8,
+    name: "Beauty Care Set",
+    price: 1999,
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+    rating: 4.2,
+    category: "Beauty",
+  },
+];
+
+export default products;
