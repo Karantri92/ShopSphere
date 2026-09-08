@@ -1,19 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 import "../styles/Navbar.css";
 
-
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const cartItems = useSelector((state) => state.cart.items);
 
   const cartCount = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
+
+  // Check whether user is logged in
+  const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
     <nav className="navbar">
@@ -23,6 +32,7 @@ function Navbar() {
       </div>
 
       <div className="nav-links">
+
         <Link to="/">Home</Link>
 
         <Link to="/products">Products</Link>
@@ -31,17 +41,20 @@ function Navbar() {
           Cart ({cartCount})
         </Link>
 
-        <Link to="/login">Login</Link>
-        <Button
-          variant="outlined"
-          onClick={() => {
-            localStorage.removeItem("token");
-            localStorage.removeItem("user");
-            navigate("/login");
-          }}
-        >
-          Logout
-</Button>
+        {!token ? (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Sign Up</Link>
+          </>
+        ) : (
+          <Button
+            variant="outlined"
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
+        )}
+
       </div>
 
     </nav>
